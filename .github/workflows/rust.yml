@@ -20,14 +20,14 @@ jobs:
     - name: Update local toolchain
       run: |
         rustup update
-        rustup component add clippy
+        
     - name: Lint
       run: |
         cargo fmt -- --check
         cargo clippy -- -D warnings    
 
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --release --verbose
 
     - name: Run tests
       run: |
