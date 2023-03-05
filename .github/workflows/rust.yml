@@ -33,6 +33,11 @@ jobs:
       run: |
         cargo check
         cargo test --verbose
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+
+
 
 
         
