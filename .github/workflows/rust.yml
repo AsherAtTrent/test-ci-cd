@@ -11,7 +11,9 @@ env:
 
 jobs:
 
-  cache:
+  lint-test-build:
+    runs-on: windows-latest
+
     - uses: actions/cache@v3
       with:
         path: |
@@ -21,11 +23,7 @@ jobs:
           ~/.cargo/git/db/
           target/
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
-
-  lint-test-build:
-    runs-on: windows-latest
-
+        
     steps:
     - uses: actions/checkout@v3
 
